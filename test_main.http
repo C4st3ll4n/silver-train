@@ -1,0 +1,48 @@
+# Test your FastAPI endpoints
+
+GET http://127.0.0.1:8000/
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/hello/User
+Accept: application/json
+
+###
+###
+
+GET http://127.0.0.1:8000/predict?smoker=no&children=1&bmi=18&age=26
+Accept: application/json
+
+
+###
+POST http://127.0.0.1:8000/predict
+Content-Type: application/json
+
+{
+  "age": 25,
+  "bmi": 12,
+  "children": 0,
+  "smoker": "yes"
+}
+
+###
+POST http://127.0.0.1:8000/predict-multiple
+Content-Type: application/json
+
+{
+  "data": [
+    {
+      "age": 25,
+      "bmi": 12,
+      "children": 0,
+      "smoker": "yes"
+    },
+    {
+      "age": 25,
+      "bmi": 12,
+      "children": 0,
+      "smoker": "no"
+    }
+  ]
+}
